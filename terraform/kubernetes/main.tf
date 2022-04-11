@@ -8,9 +8,9 @@ locals {
   keyvault = {
     name = "dkrizickv"
     acr = {
-            hostname = "acr-hostname"
-            username = "acr-username"
-            password = "acr-password"
+      hostname = "acr-hostname"
+      username = "acr-username"
+      password = "acr-password"
     }
   }
 }

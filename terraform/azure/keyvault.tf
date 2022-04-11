@@ -14,14 +14,20 @@ resource "azurerm_key_vault" "keyvault" {
   }
 }
 
+resource "azurerm_key_vault_secret" "acr_hostname" {
+  key_vault_id = azurerm_key_vault.keyvault.id
+  name = local.keyvault.acr.hostname
+  value = azurerm_container_registry.dkriziccr.login_server
+}
+
 resource "azurerm_key_vault_secret" "acr_username" {
   key_vault_id = azurerm_key_vault.keyvault.id
-  name = local.keyvault.acr_username
+  name = local.keyvault.acr.username
   value = azurerm_container_registry.dkriziccr.admin_username
 }
 
 resource "azurerm_key_vault_secret" "acr_password" {
   key_vault_id = azurerm_key_vault.keyvault.id
-  name = local.keyvault.acr_password
+  name = local.keyvault.acr.password
   value = azurerm_container_registry.dkriziccr.admin_password
 }

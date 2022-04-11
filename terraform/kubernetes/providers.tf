@@ -1,5 +1,6 @@
 provider "kubernetes" {
-
+  config_context = "DKrizic"
+  config_path = "~/.kube/config"
 }
 
 provider "azurerm" {
