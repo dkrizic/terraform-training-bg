@@ -24,3 +24,17 @@ resource "azurerm_kubernetes_cluster" "kubernetes" {
     type = "SystemAssigned"
   }
 }
+
+/*
+resource "azurerm_key_vault_secret" "kubernetes_client_certificate" {
+  key_vault_id = azurerm_key_vault.keyvault.id
+  name      = "kubernetes-client-certificate"
+  value     = azurerm_kubernetes_cluster.kubernetes.kube_admin_config.client_certificate
+}
+*/
+
+resource "azurerm_key_vault_secret" "kubernetes_config_raw" {
+  key_vault_id = azurerm_key_vault.keyvault.id
+  name      = "kubernetes-config-raw"
+  value     = azurerm_kubernetes_cluster.kubernetes.kube_config_raw
+}
