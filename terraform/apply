@@ -1,0 +1,2 @@
+#!/bin/bash
+terraform plan -var=client_secret=$CLIENT_SECRET -out=planfile && terraform apply planfile
