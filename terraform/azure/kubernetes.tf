@@ -7,6 +7,7 @@ resource "azurerm_kubernetes_cluster" "kubernetes" {
 
   location            = local.location
   resource_group_name = azurerm_resource_group.resource_group.name
+  kubernetes_version = "1.22.6"
 
   name = "DKrizic"
   dns_prefix = "dkrizicaks"
@@ -22,5 +23,4 @@ resource "azurerm_kubernetes_cluster" "kubernetes" {
   identity {
     type = "SystemAssigned"
   }
-
 }
