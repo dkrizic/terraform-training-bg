@@ -1,3 +1,8 @@
 provider "random" {
-  version = "3.1.2"
+}
+
+terraform {
+  required_providers {
+    random = "3.1.2"
+  }
 }
