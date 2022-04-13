@@ -1,13 +1,13 @@
-resource "kubernetes_namespace" "mywebapp" {
+resource "kubernetes_namespace" "backend" {
   metadata {
-    name = "mywebapp"
+    name = "backend"
   }
 }
 
-resource "kubernetes_secret" "test-pull" {
+resource "kubernetes_secret" "acr-pull" {
   metadata {
     name = "acr-pull"
-    namespace = kubernetes_namespace.mywebapp.id
+    namespace = kubernetes_namespace.backend.id
   }
   type = "kubernetes.io/dockerconfigjson"
 

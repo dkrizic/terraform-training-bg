@@ -1,2 +1,2 @@
 #!/bin/bash
-terraform plan -out=planfile && terraform apply planfile
+terraform plan -var stage=dev -out=planfile && terraform apply planfile

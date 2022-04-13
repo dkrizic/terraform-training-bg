@@ -13,4 +13,9 @@ locals {
       password = "acr-password"
     }
   }
+  helm = {
+    repository = {
+      ingress-nginx = "https://kubernetes.github.io/ingress-nginx"
+    }
+  }
 }
